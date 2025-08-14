@@ -1,17 +1,15 @@
-import { useState } from "react";
+import { Paper } from "@mui/material";
+import Payments from "./Payments";
+import Container from "@mui/material/Container";
 
 const VendingMachine = () => {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
+    <Container>
+      <h1>Vending Machine</h1>
+      <Paper elevation={8} style={{ padding: 30, maxWidth: 350 }}>
+        <Payments />
+      </Paper>
+    </Container>
   );
 };
 

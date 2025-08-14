@@ -1,12 +1,9 @@
-# 자판기 시뮬레이션 (Vending Machine)
+# Vending Machine
 
 React + TypeScript + Vite 기반의 자판기 동작 시뮬레이션 프로젝트입니다.  
-사용자가 현금 또는 카드로 결제하여 원하는 음료수를 구매할 수 있으며,  
-결제 수단, 잔액, 품절 여부, 예외 상황 등을 고려한 로직을 구현했습니다.
+사용자가 현금 또는 카드로 결제하여 원하는 음료수를 구매할 수 있습니다.
 
-![alt text](diagram.png)
-
----
+<img src="diagram.png" alt="diagram" width="320" />
 
 ## 🚀 실행 방법
 
@@ -21,7 +18,7 @@ React + TypeScript + Vite 기반의 자판기 동작 시뮬레이션 프로젝�
 npm install
 ```
 
-### 3. 프로젝트 설치
+### 3. 프로젝트 실행
 
 ```bash
 npm run dev
