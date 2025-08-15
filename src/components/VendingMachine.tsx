@@ -2,6 +2,7 @@ import { Divider, Paper } from "@mui/material";
 import Payments from "./Payments";
 import Container from "@mui/material/Container";
 import Display from "./Display";
+import Outputs from "./Outputs";
 
 const VendingMachine = () => {
   return (
@@ -11,6 +12,8 @@ const VendingMachine = () => {
         <Display />
         <Divider />
         <Payments />
+        <Divider />
+        <Outputs />
       </Paper>
     </Container>
   );

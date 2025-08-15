@@ -1,9 +1,11 @@
+import { type SyntheticEvent } from "react";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
-import { useState, type SyntheticEvent } from "react";
-import { BEVERAGE_LIST } from "../constants/constants";
 import type { Beverage } from "../types/display";
 import { useAtom, useAtomValue } from "jotai";
-import { beveragesAtom, paymentAtom, totalAtom } from "../atoms/vendingMachine";
+import { paymentAtom, totalAtom } from "../atoms/payments";
+import { beveragesAtom } from "../atoms/display";
+import { BEVERAGE_LIST } from "../constants/display";
+import { getSumOfBeveragePrice } from "../utils/utils";
 
 export default function Display() {
   const [beverages, setBeverages] = useAtom(beveragesAtom);
@@ -20,7 +22,7 @@ export default function Display() {
     }
   };
 
-  const sumPrice = beverages.reduce((partialSum, a) => partialSum + a.price, 0);
+  const sumPrice = getSumOfBeveragePrice(beverages);
 
   return (
     <FormGroup sx={{ p: 3 }}>
