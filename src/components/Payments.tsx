@@ -11,10 +11,6 @@ export default function Payments() {
 
   const handlePayment = (selected: PaymentEnum) => {
     setPayment(selected);
-
-    if (selected === PaymentEnum.Card) {
-      setTotal(CARD_LIMIT);
-    }
   };
 
   return (
@@ -45,17 +41,22 @@ export default function Payments() {
         </ButtonGroup>
       </Grid>
       {payment === PaymentEnum.Cash && (
-        <Grid size={12}>
-          <ButtonGroup size="small">
-            {CASH_UNITS.map((item) => (
-              <Button onClick={() => setTotal((prev) => prev + item)}>
-                {item.toLocaleString()} 원
-              </Button>
-            ))}
-          </ButtonGroup>
-        </Grid>
+        <>
+          <Grid size={12}>
+            <ButtonGroup size="small">
+              {CASH_UNITS.map((item) => (
+                <Button onClick={() => setTotal((prev) => prev + item)}>
+                  {item.toLocaleString()} 원
+                </Button>
+              ))}
+            </ButtonGroup>
+          </Grid>
+          <Grid size={12}>합계: {total.toLocaleString()}원</Grid>
+        </>
       )}
-      {payment && <Grid size={12}>합계: {total.toLocaleString()}원</Grid>}
+      {payment === PaymentEnum.Card && (
+        <Grid size={12}>(1회 결제 한도: {CARD_LIMIT.toLocaleString()}원)</Grid>
+      )}
     </Grid>
   );
 }

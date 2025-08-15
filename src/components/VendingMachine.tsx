@@ -8,7 +8,7 @@ const VendingMachine = () => {
   return (
     <Container>
       <h1>Vending Machine</h1>
-      <Paper elevation={8} style={{ maxWidth: 400 }}>
+      <Paper elevation={8} style={{ width: 400 }}>
         <Display />
         <Divider />
         <Payments />
