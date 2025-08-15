@@ -1,12 +1,15 @@
-import { Paper } from "@mui/material";
+import { Divider, Paper } from "@mui/material";
 import Payments from "./Payments";
 import Container from "@mui/material/Container";
+import Display from "./Display";
 
 const VendingMachine = () => {
   return (
     <Container>
       <h1>Vending Machine</h1>
-      <Paper elevation={8} style={{ padding: 30, maxWidth: 350 }}>
+      <Paper elevation={8} style={{ maxWidth: 400 }}>
+        <Display />
+        <Divider />
         <Payments />
       </Paper>
     </Container>

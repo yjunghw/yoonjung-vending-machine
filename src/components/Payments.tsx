@@ -1,15 +1,13 @@
+import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import { Button, ButtonGroup } from "@mui/material";
-import { useState } from "react";
 import { CASH_UNITS } from "../constants/constants";
-
-enum PaymentEnum {
-  Cash = "cash",
-  Card = "card",
-}
+import { paymentAtom } from "../atoms/payment";
+import { PaymentEnum } from "../types/payments";
+import { useAtom } from "jotai";
 
 export default function Payments() {
-  const [payment, setPayment] = useState<PaymentEnum | null>(null);
+  const [payment, setPayment] = useAtom(paymentAtom);
   const [total, setTotal] = useState(0);
 
   const handlePayment = (selected: PaymentEnum) => {
@@ -27,6 +25,7 @@ export default function Payments() {
       columnGap={2}
       alignItems="center"
       justifyContent="center"
+      sx={{ p: 3 }}
     >
       <Grid size={6}>지불 수단을 선택하세요.</Grid>
       <Grid size={4}>
@@ -38,7 +37,7 @@ export default function Payments() {
             현금
           </Button>
           <Button
-            variant="outlined"
+            variant={payment === PaymentEnum.Card ? "contained" : "outlined"}
             onClick={() => handlePayment(PaymentEnum.Card)}
             disabled={payment === PaymentEnum.Cash}
           >

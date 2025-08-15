@@ -1,4 +1,4 @@
-import type { Beverage } from "../types/types";
+import type { Beverage } from "../types/display";
 
 // 1. 사용자가 사용가능한 결제수단
 //     1. 현금 : 100원 / 500원 / 1,000원 / 5,000원 / 10,000원권 사용가능
@@ -11,7 +11,7 @@ import type { Beverage } from "../types/types";
 
 export const CASH_UNITS = [100, 500, 1000, 5000, 10000];
 
-export const BEVERAGES: Beverage[] = [
+export const BEVERAGE_LIST: Beverage[] = [
   { name: "콜라", price: 1100 },
   { name: "물", price: 600 },
   { name: "커피", price: 700 },
